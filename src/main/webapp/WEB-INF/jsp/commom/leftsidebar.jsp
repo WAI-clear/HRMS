@@ -31,11 +31,19 @@
 <script type="text/javascript">
     //跳转到员工页面
     $(".emp_info").click(function () {
+<<<<<<< HEAD
         $(this).attr("href", "/hrms/emp/getEmpList");
     });
     //跳转到部门页面
     $(".dept_info").click(function () {
         $(this).attr("href", "/hrms/dept/getDeptList");
+=======
+        $(this).attr("href", "/HRMS/hrms/emp/getEmpList");
+    });
+    //跳转到部门页面
+    $(".dept_info").click(function () {
+        $(this).attr("href", "dept/getDeptList");
+>>>>>>> 0a8d332f61738510c9dd777abe5b15e9a2241219
     });
     //员工清零这个功能暂未实现
     $(".emp_clearall_btn").click(function () {
