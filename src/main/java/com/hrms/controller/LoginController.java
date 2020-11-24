@@ -37,12 +37,9 @@ public class LoginController {
         String password = request.getParameter("password");
         System.out.println(username + password);
         if (!"admin1234".equals(username + password)){
-<<<<<<< HEAD
                 //success;
                 //zhaoyunx;
-=======
 
->>>>>>> 0a8d332f61738510c9dd777abe5b15e9a2241219
         }
         return "main";
     }
