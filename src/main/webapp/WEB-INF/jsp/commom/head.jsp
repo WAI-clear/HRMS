@@ -35,7 +35,7 @@
                         <a href="#">公司介绍 <span class="sr-only">(current)</span>  </a>
                     </li>
                     <li><a href="#">人力资源部</a></li>
-                    <li><a href="#">请假申请</a></li>
+                    <li><a href="/test">请假申请</a></li>
                     <li><a href="#">报销申请</a></li>
                     <li><a href="#">出勤记录</a></li>
                 </ul>
