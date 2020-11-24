@@ -62,7 +62,7 @@ public class LoginController {
      */
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
     public String logout(){
-
+        System.out.println("logout");
         return "login";
     }
 
