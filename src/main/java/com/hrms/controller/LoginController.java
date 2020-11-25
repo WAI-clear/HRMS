@@ -1,12 +1,18 @@
 package com.hrms.controller;
 
+import com.hrms.bean.Admin;
+
+
+import com.hrms.service.AdminService;
 import com.hrms.util.JsonMsg;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
  * @author GenshenWang.nomico
@@ -15,6 +21,8 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 @RequestMapping(value = "/hrms")
 public class LoginController {
+    @Autowired
+    AdminService adminService;
 
     /**
      * 登录：跳转到登录页面
@@ -37,11 +45,27 @@ public class LoginController {
         String password = request.getParameter("password");
         System.out.println(username + password);
         if (!"admin1234".equals(username + password)){
-                //success;
-                //zhaoyunx;
 
         }
         return "main";
+    }
+    @RequestMapping(value = "/adminLogin", method = RequestMethod.GET)
+    //@ResponseBody
+    public String adminLogin(){
+        return "admin";
+    }
+    @RequestMapping(value = "/admin",method = RequestMethod.POST)
+    //@ResponseBody
+    public String adminDoLogin(HttpServletRequest request){
+        String aName = request.getParameter("username");
+        String aPasswd = request.getParameter("password");
+        System.out.println(aName + aPasswd);
+        List<Admin> rs= adminService.selectByPasswdAndName(aName,aPasswd);
+        if(rs.size() !=0){
+            return "main";
+        }
+        return "admin";
+
     }
 
     /**
@@ -50,6 +74,7 @@ public class LoginController {
      */
     @RequestMapping(value = "/main", method = RequestMethod.GET)
     public String main(){
+
         return "main";
     }
 
@@ -59,6 +84,7 @@ public class LoginController {
      */
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
     public String logout(){
+
         System.out.println("logout");
         return "login";
     }

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @date 2018/3/7.
  */
 @Controller
-@RequestMapping(value = "/hrms")
+@RequestMapping(value = "/main")
 public class MainController {
 
 
